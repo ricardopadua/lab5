@@ -2,12 +2,19 @@
   "name": "lab5-service",
   "version": "1.0.0",
   "main": "index.js",
+<<<<<<< HEAD
+  "author": " <ricardo.padua4@gmail.com>",
+=======
+>>>>>>> 8bee194d69972d1adf8a518a89749648d653fe72
   "license": "MIT",
   "scripts": {
     "dev": "nodemon index.js"
   },
   "keywords": [],
+<<<<<<< HEAD
+=======
   "author": "",
+>>>>>>> 8bee194d69972d1adf8a518a89749648d653fe72
   "description": "",
   "dependencies": {
     "body-parser": "^1.18.3",

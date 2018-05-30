@@ -5,10 +5,17 @@ module.exports = {
   development: {
     client: 'postgres',
     connection: {
+<<<<<<< HEAD
+        host: '192.168.0.158',
+	database: 'lab5_dev',
+	user: 'postgres',
+	password: 'bitnami'
+=======
       host: '192.168.11.3',
 	database: 'lab5_dev',
 	user: 'postgres',
 	password: '******'
+>>>>>>> 8bee194d69972d1adf8a518a89749648d653fe72
     }
   },
 

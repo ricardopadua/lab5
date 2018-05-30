@@ -129,7 +129,11 @@ mkdir ${projeto}-service && cd ${projeto}-service && git init
     echo main.start'(3000)' >> index.js
 
 # Criando Script "dev" no package.json
+<<<<<<< HEAD
+    sed -i '8s/"test":.*1"/"dev": "nodemon index.js"/g' package.json
+=======
     sed -i '7s/"test":.*1"/"dev": "nodemon index.js"/g' package.json
+>>>>>>> 8bee194d69972d1adf8a518a89749648d653fe72
     
 # Criando Readme.md com Informações utilizadas no projeto backend
     touch README.md 
