@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-# STACK BACKEND
 
-# Express - http://expressjs.com/
-npm install express --save
-
-# expressjs - http://expressjs.com/
-npm install body-parser --save
 
 =======
 ## lab5-service
