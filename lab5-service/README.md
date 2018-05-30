@@ -1,7 +1,3 @@
-# STACK BACKEND
-
-
-
 # lab5-service
 
 > A express project
@@ -20,9 +16,11 @@ npm run unit
 
 # run all tests
 npm test
+...
 
-# STACK BACKEND
+## Stack Backend 
 
+...
 # Express - http://expressjs.com/
 npm install express --save
 
