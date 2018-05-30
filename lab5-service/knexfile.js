@@ -8,7 +8,7 @@ module.exports = {
       host: '192.168.11.3',
 	database: 'lab5_dev',
 	user: 'postgres',
-	password: 'bitnami'
+	password: '******'
     }
   },
 
