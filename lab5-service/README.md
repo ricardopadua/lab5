@@ -16,11 +16,11 @@ npm run unit
 
 # run all tests
 npm test
-...
+```
 
 ## Stack Backend 
 
-...
+```
 # Express - http://expressjs.com/
 npm install express --save
 
