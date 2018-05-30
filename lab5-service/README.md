@@ -1,7 +1,3 @@
-
-
-> A express project
-
 ## Build Setup
 
 ``` bash
