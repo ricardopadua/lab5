@@ -34,7 +34,6 @@ npm install body-parser --save
 # Logger utilizado para registrar os acessos ao serviço
 npm install morgan --save
 
->>>>>>> 8bee194d69972d1adf8a518a89749648d653fe72
 # Knex - http://knexjs.org/
 # Contrutor de Consultas SQL
 npm install knex --save
@@ -43,18 +42,13 @@ npm install knex --save
 # Plugin para conexão ao banco de dados Postgres
 npm install pg --save
 
-<<<<<<< HEAD
 # Morgan - http://expressjs.com/
 # Logger utilizado para registrar os acessos ao serviço
 npm install morgan --save
 
-=======
->>>>>>> 8bee194d69972d1adf8a518a89749648d653fe72
 # Nodemon - https://nodemon.io/
 # recarrega as alterações feitas no projeto sem matar o serviço
 npm install nodemon --save-dev
 
-<<<<<<< HEAD
-=======
 ```
->>>>>>> 8bee194d69972d1adf8a518a89749648d653fe72
+
