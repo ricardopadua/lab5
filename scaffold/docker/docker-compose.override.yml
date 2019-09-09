@@ -1,0 +1,72 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USERNAME: "${POSTGRES_USERNAME}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - - "${POSTGRES_PORT_EXPOSE}:${POSTGRES_PORT_INTERNAL}"
+    volumes:
+      - ${DOCKER_VOLUMES}:/var/lib/postgresql/data 
+    networks:
+      - ${DOCKER_NETWORK}
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_EMAIL}"
+      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_PASSWORD}"
+    ports:
+      - "${PGADMIN_PORT_EXPOSE}:${PGADMIN_PORT_INTERNAL}"
+    depends_on:
+      - postgres
+    networks:
+      - ${DOCKER_NETWORK}
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "${MONGOEX_PORT_EXPOSE}:${MONGOEX_PORT_INTERNAL}"
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: "${MONGOEX_USERNAME}"
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGOEX_PASSWORD}
+      ME_CONFIG_MONGODB_PORT: ${MONGODB_PORT_EXPOSE}
+      ME_CONFIG_MONGODB_ADMINUSERNAME: "${MONGODB_USERNAME}"
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "${MONGODB_PASSWORD}"
+    depends_on:
+      - mongo
+    networks:
+      - ${DOCKER_NETWORK}
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGODB_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGODB_PASSWORD}"
+    ports:
+      - "${MONGODB_PORT_EXPOSE}:${MONGODB_PORT_INTERNAL}"
+    volumes:
+      - ${DOCKER_VOLUMES}:/data/db
+    networks:
+      - ${DOCKER_NETWORK}
+
+  apibackend:
+    environment:
+      - POSTGRES_HOSTNAME: "${POSTGRES_HOSTNAME}"
+      - POSTGRES_USERNAME: "${POSTGRES_USERNAME}"
+      - POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      - MONGODB_HOSTNAME: "${MONGODB_HOSTNAME}"
+      - MONGODB_USERNAME: "${MONGODB_USERNAME}"
+      - MONGODB_PASSWORD: "${MONGODB_PASSWORD}"
+      - ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - "${API_PORT_EXPOSE}:${API_PORT_INTERNAL}"
+
+networks: 
+  - ${DOCKER_NETWORK}:
+    driver: bridge
+
+
+
